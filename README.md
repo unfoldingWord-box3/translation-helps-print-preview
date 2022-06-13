@@ -57,6 +57,20 @@ Translation Helps RCL is focused on rendering individual pieces of resources as 
 1. Provide hook to get a GL quote from OL quote and related scripture data.
 
 ___
+
+### Node.js script for headless rendering
+
+The Node.js environment does not need to reacreate everything that the app or RCLs do to create a PDF. 
+
+1. Generate data required to pass to an App that generates Print Preview.
+
+   1. If the app requires .zip files of all resources, download and provide those.
+
+   1. If the app requires a link to make permalinks load required data from server.
+
+1. Pass link into a headless browser and trigger Print function after the page renders.
+Upda
+___
 ___
 
 ## Repository Structure
