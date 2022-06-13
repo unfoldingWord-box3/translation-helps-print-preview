@@ -69,7 +69,7 @@ The Node.js environment does not need to reacreate everything that the app or RC
    1. If the app requires a link to make permalinks load required data from server.
 
 1. Pass link into a headless browser and trigger Print function after the page renders.
-Upda
+
 ___
 ___
 
