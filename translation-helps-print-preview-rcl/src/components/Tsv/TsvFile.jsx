@@ -4,30 +4,33 @@ import { tsvStringToTable } from 'uw-tsv-parser';
 
 import TsvRow from './TsvRow';
 
-export default function TsvFile ({ file, items: _items=[] }) {
-  const [items, setItems] = useState(_items);
+export default function TsvFile ({ file, rows: _rows=[] }) {
+  const [rows, setRows] = useState(_rows);
 
   useEffect(() => {
     const { header, data } = file ? tsvStringToTable(file) : {};
 
-    let _items = [];
+    let _rows = [];
 
-    data?.forEach((row) => {
-      let item = {};
+    data?.forEach((_row) => {
+      let row = {};
       
       header.forEach((column, index) => {
-        item[column] = row[index];
+        row[column] = _row[index];
       });
   
-      _items = [..._items, item];
+      _rows = [..._rows, row];
     });
   
-    setItems(_items);
+    setRows(_rows);
+
+    return(() => {
+      setRows([]);
+    });
   }, [file]);
 
-
-  const itemsComponents = items?.map((item, index) => (
-    <TsvRow key={index} item={item} />
+  const itemsComponents = rows?.map((row, index) => (
+    <TsvRow key={index} row={row} />
   ));
   
   return (
@@ -39,7 +42,7 @@ export default function TsvFile ({ file, items: _items=[] }) {
 
 TsvFile.propTypes = {
   file: PropTypes.string,
-  items: PropTypes.array,
+  rows: PropTypes.array,
 };
 
 TsvFile.defaultProps = {};

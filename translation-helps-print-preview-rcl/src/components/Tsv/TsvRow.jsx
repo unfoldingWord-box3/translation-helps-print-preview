@@ -1,32 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { TsvContent } from 'translation-helps-rcl';
+import ReactMarkdown from 'react-markdown';
+// import { useDeepCompareEffect } from 'use-deep-compare';
 
 export default function TsvRow ({
-  item,
-  filters: _filters,
-  fontSize = '1.0em',
-  markdownView=false,
+  row,
 }) {
-  const [selectedQuote, setQuote] = useState({});
-  const filters = _filters || Object.keys(item);
 
   return (
-    <TsvContent
-      item={item}
-      filters={filters}
-      fontSize={fontSize}
-      markdownView={markdownView}
-      selectedQuote={selectedQuote}
-      setQuote={setQuote}
-      showSaveChangesPrompt={false}
-    />
+    <div>
+      <h3>{row.Reference} - "{row.Quote}"</h3>
+      <ReactMarkdown>
+        {row.Note}
+      </ReactMarkdown>
+    </div>
   );
 };
 
 TsvRow.propTypes = {
-  item: PropTypes.object,
-  filters: PropTypes.array,
-  fontSize: PropTypes.string,
-  markdownView: PropTypes.bool,
+  row: PropTypes.object,
 };

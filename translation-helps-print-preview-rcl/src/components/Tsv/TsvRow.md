@@ -1,7 +1,7 @@
 # TsvRow
 
 ```js
-const item = {
+const row = {
   "Reference":"1:1",
   "ID":"rtc9",
   "Tags":"",
@@ -11,5 +11,5 @@ const item = {
   "Note":"Note goes here.",
 };
 
-<TsvRow item={item} />
+<TsvRow row={row} />
 ```
