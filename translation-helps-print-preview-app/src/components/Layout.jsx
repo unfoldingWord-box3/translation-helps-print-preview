@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
 import { TsvFile } from "translation-helps-print-preview-rcl";
 
-export default function Layout() {
+export default function Layout({url}) {
   const [file, setFile] = useState();
 
   useEffect(() => {
-    fetch('https://git.door43.org/test_org2/ml_tn/raw/branch/master/tn_3JN.tsv')
+    fetch(url)
     .then(response => response.text())
     .then(_file => setFile(_file));
-  }, []);
+
+    return (() => {
+      setFile();
+    });
+  }, [url]);
 
   return (
     <div className="Layout">
