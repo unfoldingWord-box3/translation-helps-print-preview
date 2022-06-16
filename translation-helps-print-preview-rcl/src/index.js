@@ -1,5 +1,7 @@
-import TsvFile from "./components/TsvFile";
+import TsvFile from "./components/Tsv/TsvFile";
+import TsvRow from "./components/Tsv/TsvRow";
 
 export {
-  TsvFile
+  TsvFile,
+  TsvRow,
 };

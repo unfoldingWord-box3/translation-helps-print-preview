@@ -1,6 +1,6 @@
 {
   "name": "translation-helps-print-preview-rcl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "repository": {
     "url": "https://github.com/unfoldingWord-box3/translation-helps-print-preview"
@@ -54,5 +54,6 @@
     "react-scripts": "^4.0.3",
     "react-styleguidist": "^11.2.0",
     "webpack": "^4.44.0"
-  }
+  },
+  "main": "./build/index.js"
 }
