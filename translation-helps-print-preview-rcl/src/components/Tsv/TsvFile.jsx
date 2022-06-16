@@ -4,7 +4,7 @@ import { tsvStringToTable } from 'uw-tsv-parser';
 
 import TsvRow from './TsvRow';
 
-export default function TsvFile ({ file, rows: _rows=[] }) {
+export default function TsvFile ({ file, rows: _rows=[], rowComponent, }) {
   const [rows, setRows] = useState(_rows);
 
   useEffect(() => {
@@ -30,11 +30,11 @@ export default function TsvFile ({ file, rows: _rows=[] }) {
   }, [file]);
 
   const itemsComponents = rows?.map((row, index) => (
-    <TsvRow key={index} row={row} />
+    <TsvRow key={index} row={row} component={rowComponent} />
   ));
   
   return (
-    <div id='fileContent'>
+    <div className='fileContent'>
       {itemsComponents}
     </div>
   );
@@ -43,6 +43,7 @@ export default function TsvFile ({ file, rows: _rows=[] }) {
 TsvFile.propTypes = {
   file: PropTypes.string,
   rows: PropTypes.array,
+  rowComponent: PropTypes,
 };
 
 TsvFile.defaultProps = {};

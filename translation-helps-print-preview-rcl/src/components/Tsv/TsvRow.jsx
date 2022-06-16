@@ -5,18 +5,23 @@ import ReactMarkdown from 'react-markdown';
 
 export default function TsvRow ({
   row,
+  component: Component,
 }) {
 
-  return (
-    <div>
-      <h3>{row.Reference} - "{row.Quote}"</h3>
-      <ReactMarkdown>
-        {row.Note}
-      </ReactMarkdown>
-    </div>
-  );
+  return <Component row={row} />;
 };
 
 TsvRow.propTypes = {
   row: PropTypes.object,
 };
+
+TsvRow.defaultProps = {
+  component: ({ row, ...props}) => (
+    <div className='tsvRow'>
+      <h3>{row.Reference} - "{row?.GlQuote || row?.Quote}"</h3>
+      <ReactMarkdown>
+        {row.Note}
+      </ReactMarkdown>
+    </div>
+  ),
+}
