@@ -43,7 +43,7 @@ export default function TsvFile ({ file, rows: _rows=[], rowComponent, }) {
 TsvFile.propTypes = {
   file: PropTypes.string,
   rows: PropTypes.array,
-  rowComponent: PropTypes,
+  rowComponent: PropTypes.func,
 };
 
 TsvFile.defaultProps = {};
