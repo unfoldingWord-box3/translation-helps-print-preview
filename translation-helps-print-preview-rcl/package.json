@@ -55,5 +55,8 @@
     "react-styleguidist": "^11.2.0",
     "webpack": "^4.44.0"
   },
-  "main": "./src/index.js"
+  "main": "build/index.js",
+  "files": [
+    "build"
+  ]
 }

@@ -1,9 +1,18 @@
+import { useEffect, useState } from "react";
+import { TsvFile } from "translation-helps-print-preview-rcl";
 
 export default function Layout() {
+  const [file, setFile] = useState();
+
+  useEffect(() => {
+    fetch('https://git.door43.org/test_org2/ml_tn/raw/branch/master/tn_3JN.tsv')
+    .then(response => response.text())
+    .then(_file => setFile(_file));
+  }, []);
+
   return (
     <div className="Layout">
-      <h1>Layout Component</h1>
-      <p>This is a placeholder. Go update it to make it do something!</p>
+      <TsvFile file={file} />
     </div>
   );
 };
