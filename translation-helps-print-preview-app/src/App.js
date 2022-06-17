@@ -7,7 +7,7 @@ function App() {
     <PermalinksHandler>
       <div className="App">
         <h1>Translation Helps Print Preview App</h1>
-        <Layout/>
+        <Layout />
       </div>
     </PermalinksHandler>
   );

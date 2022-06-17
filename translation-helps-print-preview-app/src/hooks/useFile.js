@@ -21,4 +21,4 @@ export default function useFile(permalink) {
 
 
   return file;
-}
+};

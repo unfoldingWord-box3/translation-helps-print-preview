@@ -1,9 +1,9 @@
-import React, {useCallback, useLayoutEffect} from "react";
+import React, { useLayoutEffect } from "react";
+import { useDeepCompareCallback } from 'use-deep-compare';
 import { Previewer } from 'pagedjs';
 
 export default function usePrintPreview({component, embed}) {
-    
-  const previewPDF = useCallback(() => {
+  const previewPDF = useDeepCompareCallback(() => {
     const previewer = new Previewer();
 
     const callback = (flow) => {
@@ -23,11 +23,11 @@ export default function usePrintPreview({component, embed}) {
     } else {
       previewer.preview(options).then(callback);
     };
-  }, [embed]);
+  }, [component, embed]);
 
   useLayoutEffect(() => {
     previewPDF();
-  }, [previewPDF, embed]);
+  }, [component, previewPDF, embed]);
 
   return (
     <>

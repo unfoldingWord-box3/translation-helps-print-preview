@@ -1,41 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { tsvStringToTable } from 'uw-tsv-parser';
 
 import TsvRow from './TsvRow';
 
 export default function TsvFile ({ file, rows: _rows=[], rowComponent, }) {
-  const [rows, setRows] = useState(_rows);
-
-  useEffect(() => {
-    const { header, data } = file ? tsvStringToTable(file) : {};
-
+  const rows = useMemo(() => {
     let _rows = [];
+    const { header, data } = file ? tsvStringToTable(file) : {};
 
     data?.forEach((_row) => {
       let row = {};
-      
-      header.forEach((column, index) => {
-        row[column] = _row[index];
-      });
-  
+      header.forEach((column, index) => { row[column] = _row[index]; });
       _rows = [..._rows, row];
     });
   
-    setRows(_rows);
-
-    return(() => {
-      setRows([]);
-    });
+    return _rows;
   }, [file]);
 
-  const itemsComponents = rows?.map((row, index) => (
+  const rowsComponents = rows?.map((row, index) => (
     <TsvRow key={index} row={row} component={rowComponent} />
   ));
   
   return (
     <div className='fileContent'>
-      {itemsComponents}
+      {rowsComponents}
     </div>
   );
 };

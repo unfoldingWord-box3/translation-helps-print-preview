@@ -1068,7 +1068,7 @@
     core-js-pure "^3.20.2"
     regenerator-runtime "^0.13.4"
 
-"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.16.3", "@babel/runtime@^7.17.8", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4":
+"@babel/runtime@^7.10.2", "@babel/runtime@^7.12.5", "@babel/runtime@^7.14.0", "@babel/runtime@^7.16.3", "@babel/runtime@^7.3.1", "@babel/runtime@^7.4.4", "@babel/runtime@^7.5.5", "@babel/runtime@^7.7.6", "@babel/runtime@^7.8.3", "@babel/runtime@^7.8.4":
   version "7.18.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.18.3.tgz#c7b654b57f6f63cf7f8b418ac9ca04408c4579f4"
   integrity sha512-38Y8f7YUhce/K7RMwTp7m0uCumpv9hZkitCbBClqQIow1qSbCvGkcegKOXpEWCQLfWmevgRiWokZ1GkpfhbZug==
@@ -8854,13 +8854,13 @@ p-try@^2.0.0:
   resolved "https://registry.yarnpkg.com/p-try/-/p-try-2.2.0.tgz#cb2868540e313d61de58fafbe35ce9004d5540e6"
   integrity sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==
 
-pagedjs@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/pagedjs/-/pagedjs-0.3.5.tgz#6e2fe34347767085680e32f8456b1f4488470b73"
-  integrity sha512-pDdshfTBLXEOUg7Mk/krZX84EjKoDlSpzkDigJSXk+k3wz2h0XKhze1VEVgtcEmIy5r2Avnd8Iy7GUtxZh79VQ==
+pagedjs@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/pagedjs/-/pagedjs-0.2.0.tgz#1d3984678e093323cad745c7c1aedbb5f4bf1687"
+  integrity sha512-1vR3vI6kqKomYGeKruhtseJIgmKAmPDYMNWMYqOmQBaQynvCqz7ETi68/nhMOcwTO47jtVlBiDWww9GzjAsqAQ==
   dependencies:
     "@babel/polyfill" "^7.10.1"
-    "@babel/runtime" "^7.17.8"
+    "@babel/runtime" "^7.14.0"
     clear-cut "^2.0.2"
     css-tree "^1.1.3"
     event-emitter "^0.3.5"
