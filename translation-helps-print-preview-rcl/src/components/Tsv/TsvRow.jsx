@@ -19,9 +19,13 @@ TsvRow.defaultProps = {
   component: ({ row, ...props}) => (
     <div className='tsvRow'>
       <h3>{row.Reference} - "{row?.GlQuote || row?.Quote}"</h3>
-      <ReactMarkdown>
+      <ReactMarkdown {...props}>
         {row.Note}
       </ReactMarkdown>
     </div>
   ),
-}
+};
+
+TsvRow.propTypes = {
+  component: PropTypes.elementType,
+};

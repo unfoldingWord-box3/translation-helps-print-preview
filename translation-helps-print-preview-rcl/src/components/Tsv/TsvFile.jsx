@@ -4,7 +4,7 @@ import { tsvStringToTable } from 'uw-tsv-parser';
 
 import TsvRow from './TsvRow';
 
-export default function TsvFile ({ file, rows: _rows=[], rowComponent, }) {
+export default function TsvFile ({ file, rowComponent, }) {
   const rows = useMemo(() => {
     let _rows = [];
     const { header, data } = file ? tsvStringToTable(file) : {};
